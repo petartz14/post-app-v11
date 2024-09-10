@@ -26,6 +26,11 @@ class User extends Authenticatable
         'company'
     ];
 
+    protected $casts = [
+        'address' => 'object',
+        'company' => 'object'
+    ];
+
     public function posts()
     {
         return $this->hasMany(Post::class);
